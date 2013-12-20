@@ -205,3 +205,40 @@ exports.getMaxHeap = function ()
 };
 
 // quick sort
+
+
+//
+
+function partition(arr, low, high)
+{
+	var key = arr[low];
+	var l = low - 1;
+	var h = high;
+	while (true)
+	{
+		while (arr[--h] > key) {}
+		while (arr[++l] < key) {}
+		if (l < h) {
+			var tmp = arr[l];
+			arr[l] = arr[h];
+			arr[h] = tmp;
+		} else {
+			return h;
+		}
+	}
+}
+
+function quickSort2(arr, l, h)
+{
+	if (l < h - 1) 
+	{
+		var m = partition(arr, l, h);
+		quickSort2(arr, l, m+1);
+		quickSort2(arr, m+1, h);
+	}
+}
+
+exports.quickSort2 = function (arr)
+{
+	quickSort2(arr, 0, arr.length);
+}

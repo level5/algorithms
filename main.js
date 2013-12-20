@@ -16,6 +16,10 @@ arr = [1,4,3,77,12,32,66,13,16,63,46,9];
 sort.heapSort(arr);
 console.log("heap sort:", arr);
 
+arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16];
+sort.quickSort2(arr);
+console.log("quick sort 2:", arr);
+
 var exercise = require('./exercise');
 console.log("is exist:", exercise.isExist([3,14,22,65,9,10,41,39], 80));
 console.log("is exist 2:", exercise.isExist2([3,14,22,65,9,10,41,391], 80));

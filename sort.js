@@ -242,3 +242,58 @@ exports.quickSort2 = function (arr)
 {
 	quickSort2(arr, 0, arr.length);
 }
+
+
+// count sort
+
+function countSort(arr, result, k)
+{
+	var help = [];
+	for (var i = 0; i <= k; i++)
+	{
+		help[i] = 0;
+	}
+
+	for (var i = 0; i < arr.length; i++)
+	{
+		var key = arr[i];
+		help[key] += 1;
+	}
+
+	for (var i = 1; i < help.length; i++)
+	{
+		help[i] += help[i-1];
+	}
+
+	for (var i = 0; i < arr.length; i++)
+	{
+		var key = arr[i];
+		var index = help[key];
+		result[index - 1] = key;
+		help[key] -= 1;
+	}
+}
+
+function maxIn(arr)
+{
+	var max = -1;
+	for (var i = 0; i < arr.length; i++)
+	{
+		if (arr[i] > max){
+			max = arr[i];
+		}
+	}
+	return max;
+}
+
+exports.countSort = function (arr)
+{
+	var result = new Array(arr.length);
+	var max = maxIn(arr);
+	countSort(arr, result, max);
+
+	for(var i = 0; i < result.length; i++)
+	{
+		arr[i] = result[i];
+	}
+};

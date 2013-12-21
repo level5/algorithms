@@ -1,3 +1,6 @@
+
+
+
 var sort = require('./sort');
 
 var arr = [1,4,3,77,12,32,66,13,16,63,46,9];
@@ -20,7 +23,7 @@ arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16];
 sort.quickSort2(arr);
 console.log("quick sort 2:", arr);
 
-arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16];
+arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16]; // elementsnn must be 0 ~ n
 sort.countSort(arr);
 console.log("count sort:", arr);
 

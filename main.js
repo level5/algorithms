@@ -1,4 +1,29 @@
 
+var str = require('./string');
+
+var target = ['a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'c', 'a'];
+var source = ['b', 'a', 'c', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'c', 'a', 'b'];
+
+console.log('Naive Matcher:');
+str.naiveMatch(source, target);
+console.log('KMP matcher:');
+str.matchKMP(source, target);
+
+target = ['a', 'b', 'a', 'b'];
+source = ['c', 'a', 'b', 'a', 'b', 'a', 'b', 'b', 'a', 'b', 'a', 'b', 'c', 'a', 'b'];
+
+console.log('Naive Matcher:');
+str.naiveMatch(source, target);
+console.log('KMP matcher:');
+str.matchKMP(source, target);
+
+target = ['a', 'a'];
+source = ['a', 'a', 'a', 'a', 'a', 'a', 'b', 'b', 'a', 'b', 'a', 'b', 'c', 'a', 'b'];
+
+console.log('Naive Matcher:');
+str.naiveMatch(source, target);
+console.log('KMP matcher:');
+str.matchKMP(source, target);
 
 
 var sort = require('./sort');

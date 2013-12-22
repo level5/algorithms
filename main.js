@@ -44,6 +44,10 @@ arr = [1,4,3,77,12,32,66,13,16,63,46,9];
 sort.heapSort(arr);
 console.log("heap sort:", arr);
 
+arr = [1,4,3,77,12,32,66,13,16,63,46,9];
+sort.quickSort(arr);
+console.log("quick sort:", arr);
+
 arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16];
 sort.quickSort2(arr);
 console.log("quick sort 2:", arr);

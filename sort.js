@@ -205,11 +205,41 @@ exports.getMaxHeap = function ()
 };
 
 // quick sort
+function partition(arr, low, high) 
+{
+	var key = arr[high - 1];
+	var n = low;
+	for (var i = low; i < high - 1; i++)
+	{
+		if (arr[i] < key)
+		{
+			var tmp = arr[n];
+			arr[n] = arr[i];
+			arr[i] = tmp;
+			n++;
+		}
+	}
+	arr[high - 1] = arr[n];
+	arr[n] = key;
+	return n;
+}
 
+function quickSort(arr, low, high)
+{
+	if (low < high)
+	{
+		var n = partition(arr, low, high);
+		quickSort(arr, low, n);
+		quickSort(arr, n + 1, high);
+	}
+}
 
-//
+exports.quickSort = function (arr)
+{
+	quickSort(arr, 0, arr.length);
+};
 
-function partition(arr, low, high)
+function partition2(arr, low, high)
 {
 	var key = arr[low];
 	var l = low - 1;
@@ -232,7 +262,7 @@ function quickSort2(arr, l, h)
 {
 	if (l < h - 1) 
 	{
-		var m = partition(arr, l, h);
+		var m = partition2(arr, l, h);
 		quickSort2(arr, l, m+1);
 		quickSort2(arr, m+1, h);
 	}
@@ -297,3 +327,4 @@ exports.countSort = function (arr)
 		arr[i] = result[i];
 	}
 };
+

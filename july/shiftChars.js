@@ -41,13 +41,15 @@ exports.leftShift1 = function (arr, m)
 
 
 // 
-function invert(arr, low, hight)
+function invert(arr, low, high)
 {
-	while (low < hight)
+	while (low < high)
 	{
 		var tmp = arr[low];
-		arr[low] = arr[hight];
-		arr[hight] = tmp;
+		arr[low] = arr[high];
+		arr[high] = tmp;
+		low++;
+		high--;
 	}
 }
 
@@ -74,6 +76,8 @@ exports.leftShift3 = function (arr, m)
 	{
 		return;
 	}
+
+	var n = arr.length;
 	var d = dcp(arr.length, m);
 	for (var i = 0; i < d; i++) 
 	{
@@ -93,12 +97,14 @@ exports.leftShift4 = function (arr, m)
 	{
 		return;
 	}
+
+	var n = arr.length;
 	var d = dcp(arr.length, m);
 	for (var i = 0; i < d; i++) 
 	{
 		var tmp = arr[i];
 		var j, last = i;
-		for (j = (i + m)%n; j != n; j =(j + k)%n)
+		for (j = (i + m)%n; j != i; j =(j + m)%n)
 		{
 			arr[last] = arr[j];
 			last = j;
@@ -109,3 +115,41 @@ exports.leftShift4 = function (arr, m)
 
 //
 
+exports.leftShift5 = function (arr, m)
+{
+	if (m >= arr.length || m <= 0) 
+	{
+		return;
+	}
+
+	var n = arr.length;
+	var p1 = 0;
+	var p2 = m;
+
+	var r = (n - m) - n%m;
+	while (r--) 
+	{
+		var tmp = arr[p1];
+		arr[p1] = arr[p2];
+		arr[p2] = tmp;
+
+		p1++;
+		p2++;
+	}
+
+	var k = n%m;
+	while (k--)
+	{
+		var i = p2;
+		var tmp = arr[i];
+		while (i > p1) 
+		{
+			arr[i] = arr[i-1];
+			i--;
+		}
+		arr[p1] = tmp;
+		p1++;
+		p2++;
+	}
+
+};

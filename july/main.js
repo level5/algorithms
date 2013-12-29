@@ -47,7 +47,5 @@ console.log('lcs2:', lcs.lcs2(str1, str2));
 var now = new Date().getTime();
 console.log('cost:', now - time);
 
-var time = new Date().getTime();
-console.log('lcs3:', lcs.lcs3(str1, str2));
-var now = new Date().getTime();
-console.log('cost:', now - time);
+var group = require('./threeGroup');
+group.groups(1, 30);

@@ -26,6 +26,9 @@ console.log('KMP matcher:');
 str.matchKMP(source, target);
 
 
+console.log('fisrt char which is not repeated:', str.firstNotRepeatChar('aacdbcd'));
+
+
 var sort = require('./sort');
 
 var arr = [1,4,3,77,12,32,66,13,16,63,46,9];
@@ -56,10 +59,6 @@ arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16]; // elementsnn must be 0 
 sort.countSort(arr);
 console.log("count sort:", arr);
 
-var exercise = require('./exercise');
-console.log("is exist:", exercise.isExist([3,14,22,65,9,10,41,39], 80));
-console.log("is exist 2:", exercise.isExist2([3,14,22,65,9,10,41,391], 80));
-
 var maxHeap = sort.getMaxHeap();
 maxHeap.maxHeapInsert(100);
 maxHeap.maxHeapInsert(200);
@@ -88,3 +87,11 @@ for (var i = 0; i < 10; i++)
 {
 	console.log(maxHeap.heapExtractMax());
 }
+
+var exercise = require('./exercise');
+console.log("is exist:", exercise.isExist([3,14,22,65,9,10,41,39], 80));
+console.log("is exist 2:", exercise.isExist2([3,14,22,65,9,10,41,39], 80));
+console.log("is exist 3:", exercise.isExist3([3,14,22,65,9,10,41,39], 80));
+console.log("is exist:", exercise.isExist([3,14,22,65,9,10,41,391], 80));
+console.log("is exist 2:", exercise.isExist2([3,14,22,65,9,10,41,391], 80));
+console.log("is exist 3:", exercise.isExist3([3,14,22,65,9,10,41,391], 80));

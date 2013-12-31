@@ -274,6 +274,32 @@ exports.quickSort2 = function (arr)
 }
 
 
+function partition3(arr, low, high)
+{
+	var key = arr[low];
+
+	var i = low;
+	var j = high + 1;
+	while (true)
+	{
+		while (arr[++i] >= key || i > j);
+		while (arr[--j] <= key || j < i);
+		if (i < j) 
+		{
+			var tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+		} else 
+		{
+			break;
+		}
+	}
+	arr[low] = arr[j];
+	arr[j] = key;
+	return j;
+}
+
+
 // count sort
 
 function countSort(arr, result, k)

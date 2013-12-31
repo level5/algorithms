@@ -15,7 +15,7 @@ exports.isExist = function (arr, x)
 		}
 	}
 	return false;
-}
+};
 
 // 
 exports.isExist2 = function (arr, x) 
@@ -37,4 +37,15 @@ exports.isExist2 = function (arr, x)
 	} else {
 		return false;
 	}
+};
+
+
+function sumOf(n, m)
+{
+	
+}
+
+exports.sumOf = function (n, m)
+{
+
 }

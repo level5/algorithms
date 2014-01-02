@@ -33,31 +33,39 @@ var sort = require('./sort');
 
 var arr = [1,4,3,77,12,32,66,13,16,63,46,9];
 sort.insertionSort(arr);
-console.log("insertion sort:", arr);
+console.log("insertion sort:    ", arr);
 
 arr = [1,4,3,77,12,32,66,13,16,63,46,9];
 sort.insertionSort2(arr);
-console.log("insertion sort2:", arr);
+console.log("insertion sort2:   ", arr);
 
 arr = [1,4,3,77,12,32,66,13,16,63,46,9];
 sort.mergeSort(arr);
-console.log("merge sort:", arr);
+console.log("merge sort:        ", arr);
 
 arr = [1,4,3,77,12,32,66,13,16,63,46,9];
 sort.heapSort(arr);
-console.log("heap sort:", arr);
+console.log("heap sort:         ", arr);
 
 arr = [1,4,3,77,12,32,66,13,16,63,46,9];
 sort.quickSort(arr);
-console.log("quick sort:", arr);
+console.log("quick sort:        ", arr);
 
 arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16];
 sort.quickSort2(arr);
-console.log("quick sort 2:", arr);
+console.log("quick sort 2:      ", arr);
 
 arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16]; // elementsnn must be 0 ~ n
 sort.countSort(arr);
-console.log("count sort:", arr);
+console.log("count sort:        ", arr);
+
+arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16];
+sort.selectionSort(arr);
+console.log("selection sort:    ", arr);
+
+arr = [1,4,3,77,12,32,66,13,16,63,46,9, 13, 4, 77, 16];
+sort.shellSort(arr);
+console.log("shell sort:        ", arr);
 
 var maxHeap = sort.getMaxHeap();
 maxHeap.maxHeapInsert(100);

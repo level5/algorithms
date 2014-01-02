@@ -79,4 +79,8 @@ exports.lcs2 = function (str1, str2)
 };
 
 
-//
+//字符串含有M个字母，单词用空格分开 找出字符串中包含n个给定关键词的最短子串
+function extractSummary(description,keywords)
+{
+	
+}

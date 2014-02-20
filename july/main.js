@@ -49,3 +49,44 @@ console.log('cost:', now - time);
 
 var group = require('./threeGroup');
 group.groups(1, 30);
+
+function compareArrays(arr1, arr2)
+{
+	if (!arr1 || !arr2 || arr1.length !== arr2.length) 
+	{
+		return false;
+	}
+
+	for (var i = 0; i < arr1.length; i++)
+	{
+		if (arr1[i] !== arr2[i])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+function logExecuteTime(func, that, arg)
+{
+	var start = new Date().getTime();
+	var  result = func.call(that, arg);
+	var time = new Date().getTime() - start;
+	console.log("it spent", time, "to execute this function");
+	return result;
+}
+
+var primes = require('./primes');
+//var listOfPrimes = logExecuteTime(primes.getPrimes, primes, 100000);
+
+//var listOfPrimes2 = logExecuteTime(primes.getPrimes2, primes, 100000);
+//console.log(compareArrays(listOfPrimes, listOfPrimes2));
+//console.log('primes between 0 and 1000 are:', listOfPrimes);
+
+//var listOfPrimes2 = logExecuteTime(primes.getPrimes3, primes, 10000000);
+//console.log(compareArrays(listOfPrimes, listOfPrimes2));
+
+var listOfPrimes2 = logExecuteTime(primes.getPrimes4, primes, 10000000);
+
+var listOfPrimes2 = logExecuteTime(primes.getPrimes5, primes, 10000000);
+
